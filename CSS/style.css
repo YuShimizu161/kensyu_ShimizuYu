@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+html{
+	font-size: 62.5%;
+}
+body{
+	color: #505050;
+	width: 100%;
+	font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体";
+}
+
+.width{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 960px;
+    min-width: 960px;
+}
+.heading{
+	font-size: 5rem;
+	font-family: 'Lato', sans-serif;
+	font-weight: 100;
+	text-align: center;
+/*	margin-bottom: 65px; */
+}
+
+.header{
+	position: relative;
+	height: 270px;
+}
+.site-title{
+	font-size: 3rem;
+    font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	line-height: 270px;
+}
+.global-nav{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding-bottom: 15px;
+}
+.global-nav .nav-item{
+    display: inline-block;
+	font-size: 1.4rem;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+/*	margin-left: 30px;*/
+}
+/* 
+- 上のようなmargin-leftではなくpadding-leftで。
+空間を確保するというより要素を広げた方が良い。
+- それを2番目以降に適用させるには「li + li」。 
+*/
+.global-nav li + li{
+	padding-left: 30px; 
+}
+.global-nav .nav-item a{
+	text-decoration: none;
+	color: #505050;
+}
+        
+.top-images img{
+    width: 100%;
+    min-width: 960px;
+}
+
+.service{
+	padding: 80px 0 65px;
+}
+.service-wrapper{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	column-gap: 40px;	
+	width: 100%;
+	margin-top: 65px;
+}
+.service-box{
+	text-align: center;
+}
+.service-title{
+	font-size: 1.5rem;
+/*	margin-bottom: 12px;*/
+}
+.service-title-sub{
+	font-size: 1.3rem;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	margin-top: 12px;
+/*	margin-bottom: 45px;*/
+}
+.service-image{
+	width: 64px;
+	margin-top: 45px;
+/*	margin-bottom: 40px;*/
+}
+.service-text{
+	font-size: 1.4rem;
+	line-height: 190%;
+	margin-top: 40px;
+}
+
+.about{
+	background-color: #ECEBEB;
+	min-width: 960px;
+	padding: 65px 0;	
+}
+.about-wrapper{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	column-gap: 40px;
+	margin-top: 65px;
+}
+.about-wrapper img{
+	width: 100%;
+	height: 293.33px;
+	object-fit: cover;
+}
+.about-text-box{
+	grid-column-start: 2; 
+  	grid-column-end: 4; 
+}
+.about-title{
+	font-size: 2rem;
+	margin-bottom: 25px;
+}
+.about-text{
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	line-height: 190%;
+	margin-bottom: 25px;
+}
+
+.topic{
+	padding: 65px 0;
+}
+.topic-wrapper{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-column-gap: 40px;
+	grid-row-gap : 40px;
+	width: 100%;
+	margin-top: 65px;
+}
+.topic-box img{
+	width: 100%;
+	height: 293.33px;
+	object-fit: cover;
+	border: 1px solid #E0E0E0;
+/*	margin-bottom: 20px;*/
+}
+.topic-title{
+	font-size: 1.4rem;
+	line-height: 190%;
+	margin-top: 20px;
+}
+.topic-text{
+	font-size: 1.4rem;
+	line-height: 190%;
+}
+
+.footer{
+	padding: 100px 0 10px;
+}
+.footer-copyright{
+	font-size: 1.4rem;	
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	color: #E0E0E0;
+	text-align: right;
+}

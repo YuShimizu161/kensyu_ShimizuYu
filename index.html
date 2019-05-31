@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>課題再挑戦</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="CSS/reset.css">
+	<link rel="stylesheet" href="CSS/style.css">
+	<script src="assets/libs/jquery-3.2.1.min.js"></script>
+	<script src="JS/scroll.js"></script>
+</head>
+
+<body>
+	<header class="header width">
+		<h1 class="site-title">LEIHAUOLI</h1>
+		<nav class="global-nav">
+			<ul>
+<!-- li間の空間を一律margin-leftで取っているが、これは余りよくない。                     -->
+<!-- 一番左のliには本来padding-leftは不要なはず。                                        -->
+<!-- 結合セレクタ(li+li)等を使用して、最初の要素にはmargin-leftを設定しないようにすべき。-->
+<!-- 今回は実害はないが、ulの左側に要素が追加された時に思わぬバグになる可能性がある。    -->
+				<li class="nav-item"><a href="#1">SERVICE</a></li>
+				<li class="nav-item"><a href="#2">ABOUT</a></li>
+				<li class="nav-item"><a href="#3">TOPIC</a></li>
+			</ul>
+		</nav>
+	</header>
+<!-- HTMLのタグはdivとspan以外、全て「文章構造」上の意味がある。           -->
+<!-- imgタグは文章構造上必要な画像を表示するために使用する。               -->
+<!-- 下記の画像は、単なるイメージ画像であり、文章構造に何の影響も与えない。-->
+<!-- このような画像は背景画像にするか、疑似要素で表示すべき。              -->
+
+<!-- figureタグで囲んでいるのも間違い。figureは「挿絵」をマークアップするためのタグ。      -->
+<!-- 挿絵とは、他の文章から参照されている画像のこと。この画像はどこからも参照されていない。-->
+<!-- よってfigureの代わりにdivを使用し、その背景画像として表示すると良い。                 -->
+<!-- もしくはheaderのafter要素で動的に生成するという手もある。                             -->
+	<figure class="top-images">
+		<img src="assets/images/img_kv.jpg" alt="main-image">
+	</figure>
+
+	<section class="service width" id="1">
+		<h2 class="heading">SERVICE</h2>
+<!-- 通常フローに属するHTMLの要素は左から右、上から下に積まれていく。                  -->
+<!-- 要素が並列に並ぶ場合は、右側の要素が存在して初めて要素間の空間という概念が発じる。-->
+<!-- 同様に垂直に並ぶ場合は、下側の要素が存在して初めて要素間の空間という概念が生じる。-->
+<!-- よって、この空間は並列ならば右の、垂直ならば下の要素に属すると考えるべき。        -->
+<!-- こうすることによってトルツメもし易くなる。                                        -->
+		<div class="service-wrapper">
+			<div class="service-box">
+<!-- ヘディングタグを設定するのならば、必ずsection、articleまたはasideで章の範囲を囲むべき。-->
+
+<!-- 但しその場合でも下記の構造をh3とh4を使用してマークアップするのは間違い。                                          -->
+<!-- 「提案力」と「PROPOSAL」は言語が違うだけで同じ意味なので異なるレベルのヘディングタグでマークアップすべきではない。-->
+<!-- 2つの用語を1つのヘディングタグで囲み、片方をspan等で囲んで改行と装飾を行えばよい。                                -->
+
+<!-- そもそもこの構造は「章」として定義するほどの情報量はない。        -->
+<!-- よってdl、dt、ddでマークアップした方が文章構造を適切に表現できる。-->
+<!-- その場合はservice-boxをdlに、h3とh4を各々dtに、pをddに変更する。  -->
+				<h3 class="service-title">提案力</h3>
+				<h3 class="service-title-sub">PROPOSAL</h4>
+<!-- 下記の画像は単なるアイコンであり、文章構造上の意味はない。よってimgタグを使用するのではなく、例えば下のpタグのbeforeで表示する。-->
+				<img class="service-image" src="assets/images/icon_proposal.png" alt="service-image1">
+<!-- brタグは改行することが目的で使用してはならない。        -->
+<!-- 文章構造上「切り離す」ことに意味がある場合のみ使用する。-->
+<!-- 例えば俳句を5・7・5に区切る場合等。                     -->
+<!-- 下記の場合はbrの代わりに前半と後半を各々別のpタグで囲むか、前半のみをspanで囲んでblockにすれば良い。-->
+				<p class="service-text">ブランディング向上につながる<br>高い提案力</p>
+			</div>
+			<div class="service-box">
+				<h3 class="service-title">ソリューション</h3>
+				<h3 class="service-title-sub">SOLUTION</h4>
+				<img class="service-image" src="assets/images/icon_solution.png" alt="service-image2">	 
+				<p class="service-text">幅広い<br>トータルソリューション</p>
+			</div>
+			<div class="service-box">
+				<h3 class="service-title">実績</h3>
+				<h3 class="service-title-sub">EXPERIENCE</h4>
+				<img class="service-image" src="assets/images/icon_document.png" alt="service-image3">	 
+				<p class="service-text">様々な業界での<br>豊富な経験と実績</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="about" id="2">
+		<div class="width">
+			<h2 class="heading">ABOUT</h2>
+			<div class="about-wrapper">
+<!-- 下記の画像も文章構造上意味がないので、about-wrapperのbeforeか背景で表示する。-->
+				<img src="assets/images/img_office.jpg" alt="about-image1">
+				<div class="about-text-box">
+<!-- 下記の情報をaboutのサブの章として定義するのは余り良いとは言えない。                                            -->
+<!-- 何故ならばそのように定義するとh2のレベルには全く情報がなく、1つのサブの章がだけが存在するということになるため。-->
+<!-- ここでもdl、dt、ddを使用すると良い。                                                                            -->
+					<h3 class="about-title">ものづくり、ひとづくり、場づくり</h3>
+					<p class="about-text">私たちは仕事の中心には、いつも人がいると考えています。<br>「ものづくり」は、ものと人をつなげること。ものはつくるだけではなく、人と繋げてこそ意味があります。<br>「ひとづくり」は、人と人をつなげること。人が成長するためには人が必要です。<br>「場づくり」は場と人をつなげること。コミュニケーションのなかでこそ、よりよい「ものづくり」と「ひとづくり」が可能になります。<p>			  
+					<p class="about-text">この3つを私たちが実現します。</p>
+				</div>
+			</div>
+		</div>
+	</section>
+		
+	<section class="topic width" id="3">
+		<h2 class="heading">TOPICS</h2>
+		<div class="topic-wrapper">
+			<article class="topic-box">
+<!-- 下記の画像はpタグの文章と関連性が強く、暗黙的に参照されていると見做すことができる。よってfigureで囲んだ方が良い。-->
+				<figure>
+					<img src="assets/images/thumb_01.jpg" alt="topic-image1">
+				</figure>	
+				<h3 class="topic-title">内定者リクリエーションを行いました。</h3>
+				<p class="topic-text">2019年度の内定者と2日間レクリエーションを行いました。当日のテーマは、実際にプログラミングを行い自己紹介のWebページを作ってみよう！というものです。初めは何から手をつけていいのか戸惑う方もいましたが、最終日には皆さん素敵なサイトを発表してくれました。内定者の皆様お疲れ様でした！ 2020年度のインターン募集も開始しております。詳細はリクナビ2020をご確認ください。</p>
+			</article>
+
+			<article class="topic-box">
+				<figure>
+					<img src="assets/images/thumb_02.jpg" alt="topic-image2">
+				</figure>	
+				<h3 class="topic-title">コンセプト動画を追加しました。</h3>
+				<p class="topic-text">「Designing EXPERIENCES Together!」 をテーマにコンセプト動画を作成しました。エンジニア、営業、人事それぞれの目線から今後誰とどのような経験を共有していきたいかインタビューを行いました。ぜひ、チェックしてみてください！</p>
+			</article>
+
+			<article class="topic-box">
+				<figure>
+					<img src="assets/images/thumb_03.png" alt="topic-image3">
+				</figure>	
+				<h3 class="topic-title">2019卒の内定式を行いました。</h3>
+				<p class="topic-text">来期は8名の新入社員が入社予定です。内定者同士、初顔合わせとなりましたが内定式後に行われた懇親会では、すぐに打ち解け笑顔が見られました。若さ溢れ、パワー漲る内定者に負けぬよう、私共社員もより一層尽力してまいります！</p>
+			</article>
+
+			<article class="topic-box">
+				<figure>
+					<img src="assets/images/thumb_04.png" alt="topic-image4">
+				</figure>	
+				<h3 class="topic-title">自社サービス「techtree」を開始しました。</h3>
+				<p class="topic-text">『ITフリーランスの”寄り添って欲しい気持ち”に応える』をキャッチコピーに、開発会社の私達らしいサービスを展開していきます。スキルアップをされたい方を始め、沢山の方の望まれる働き方を支えていけるよう、これからも務めさせていただきます。詳しくは公式ウェブサイトをご覧ください。</p>
+			</article>
+		</div>
+	</section>
+
+	<footer class="footer width">
+<!-- ライセンス表示はsmallタグで囲む。-->
+		<p class="footer-copyright"><small>©️Lei Hau'oli Co.,Ltd.,ALL RIGHTS RESERVED</small></p>
+	</footer>
+</body>
+</html>
